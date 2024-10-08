@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Nicklasos\LaravelOnce;
 
-class Once
+class OnceService
 {
     public function check(): true
     {

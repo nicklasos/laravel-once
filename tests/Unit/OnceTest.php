@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-use Nicklasos\LaravelOnce\Once;
+use Nicklasos\LaravelOnce\Facades\Once;
+use Nicklasos\LaravelOnce\OnceService;
 use Orchestra\Testbench\Concerns\WithWorkbench;
 
 class OnceTest extends \Orchestra\Testbench\TestCase
@@ -11,8 +12,10 @@ class OnceTest extends \Orchestra\Testbench\TestCase
 
     public function testHello()
     {
-        $once = app(Once::class);
+        $once = app(OnceService::class);
 
         $this->assertTrue($once->check());
+
+        $this->assertTrue(Once::check());
     }
 }
